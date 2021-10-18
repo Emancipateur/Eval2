@@ -1,0 +1,60 @@
+.app{
+    margin: auto;
+    width: 50%;
+    height: 400px;
+    background-color: lightblue;
+    margin-top: 200px;
+    text-align: center;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-areas:
+    "newGame newGame newGame"
+    "player1 . player2"
+    "global1 dice global2"
+    "current1 btn current2"
+    ;
+ 
+}
+
+.newGame{
+    grid-area: newGame;
+
+}
+
+.player1{
+    grid-area: player1;
+
+}
+.player2{
+    grid-area: player2;
+}
+.global1{
+    grid-area: global1;
+    font-size: 40px;
+}
+.global2{
+    grid-area: global2;
+    font-size: 40px;
+}
+.currentP1{
+    grid-area: current1;
+    height: 80px;
+    width: 120px;
+    background-color: red;
+}
+.currentP2{
+    grid-area: current2;
+    height: 80px;
+    width: 120px;
+    background-color: red;
+}
+
+.dice{
+    font-size: 40px;
+
+}
+.active{
+    background-color: green;
+
+}
