@@ -19,10 +19,38 @@ let total = 0;
 
 
 
+function imgDice(dicen) {
+    switch(dicen){
+        case 1:
+            dice.innerHTML = '<img src="media/1.png" alt="dice">';
+            break;
+        case 2:
+            dice.innerHTML = '<img src="media/2.png" alt="dice">';
+            break;
+        case 3:
+            dice.innerHTML = '<img src="media/3.png" alt="dice">';
+             break;
+        case 4:
+            dice.innerHTML = '<img src="media/4.png" alt="dice">';
+            break;
+        case 5:
+            dice.innerHTML = '<img src="media/5.png" alt="dice">';
+             break;
+        case 6:
+            dice.innerHTML = '<img src="media/6.png" alt="dice">';
+             break;
+        default:
+            dice.innerHTML = "Le dé ne s'affiche pas";
+
+        
+    }
+}
+
+
 function rolling(min, max) {
    
     result = (Math.floor(Math.random() * (max - min)) + min);
-    dice.innerHTML = result
+
 
     if(result == 1){
         total = -1
@@ -61,6 +89,7 @@ function changePlayer(){
 
 btn.addEventListener('click', ()=> {
     rolling(1,7);
+    imgDice(result)
 })
 
 btnhold.addEventListener('click', ()=>{
