@@ -11,26 +11,27 @@
 </head>
 <body>
 
-<div class="app container mx-auto  w-1/2 text-center p-10 m-10 grid grid-cols-12 justify-items-center gap-6 border-solid border-8 border-yellow-700 ">
-    <h1 class="newGame col-span-12 justify-self-center ">NEW GAME</h1>
+<div class="app container mx-auto  w-3/5  text-center p-5 m-5 grid grid-cols-12 justify-items-center gap-6 border-solid border-8 border-yellow-700 ">
+    <button class="newGame col-span-12 justify-self-center "><img class="inline mr-3" src="media/new.png" width="20px">NEW GAME</button>
 
-    <div class="player1 text-3xl col-span-5">Player1
-        <div class="global1 text-pink-300 text-5xl">0</div>
+    <div class="player1 text-3xl col-span-4">Player1
+        <div class="global1 text-pink-300 text-5xl p-10">0</div>
         <div class="currentP1 text-base bg-red-500 ">CURRENT
-            <div class="current1">0</div>
+            <div class="current1 text-white text-3xl">0</div>
         </div>
     </div>
-    <div class="center col-span-2">
-        <div class="dice"><img src="media/1.png" alt="dice"></div>
-        <button id="rollDice">ROLL DICE</button>
-        <button id="hold">HOLD</button>
+    <div class="col-span-4 flex flex-col">
+        <div class="dice w-2/4 mx-auto"><img src="media/1.png" alt="dice"></div>
+        <button class="rollDice mt-5" ><img class="inline " src="media/refresh.png" width="20px"> ROLL DICE</button>
+        <button class="hold mt-5"><img class="inline" src="media/hold.png" width="20px">HOLD</button>
+  
     </div>
  
 
-    <div class="player2 text-3xl col-span-5">Player2
-        <div class="global2 text-pink-300 text-5xl justify-self-center">0</div>
+    <div class="player2 text-3xl col-span-4">Player2
+        <div class="global2 text-pink-300 text-5xl p-10">0</div>
         <div class="currentP2 text-base bg-red-500">CURRENT
-            <div class="current2">0</div>
+            <div class="current2 text-white text-3xl">0</div>
         </div>
     </div>
 
