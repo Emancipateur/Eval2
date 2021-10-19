@@ -11,6 +11,7 @@ const newGame = document.querySelector(".newGame")
 
 
 
+
 let gameStart = true
 let player1Global = 0;
 let player2Global = 0;
@@ -18,8 +19,54 @@ let current = 0;
 let addition = 0;
 let total = 0;
 
+player1.style.backgroundColor ="#a8e6cf";
 
 
+
+/* Reloading game*/
+newGame.addEventListener('click', ()=>{
+    location.reload() 
+})
+
+/* Rolling dice and choose dice img*/
+btn.addEventListener('click', ()=> {
+    rolling(1,7);
+    imgDice(result)
+})
+
+
+/* Hold the score and check if won*/
+btnhold.addEventListener('click', ()=>{
+  changePlayer();
+  if (global1.innerHTML >= 0){
+    winner()
+}
+})
+
+/*Random dice */
+function rolling(min, max) {
+   
+    result = (Math.floor(Math.random() * (max - min)) + min);
+  
+/* change player if dice == 1 */
+    if(result == 1){
+        total = 0;
+        changePlayer();
+
+/* add the score to current score*/
+    }else{
+        addition = current + result;
+        total += addition + current;
+            if(gameStart){
+                current1.innerHTML = total
+                
+            }else{
+                current2.innerHTML = total
+     }
+    }
+}
+
+/* switch the img dice */
 function imgDice(dicen) {
     switch(dicen){
         case 1:
@@ -42,36 +89,13 @@ function imgDice(dicen) {
              break;
         default:
             dice.innerHTML = "Le dé ne s'affiche pas";
-
         
     }
 }
 
-
-function rolling(min, max) {
-   
-    result = (Math.floor(Math.random() * (max - min)) + min);
-
-
-    if(result == 1){
-        total = 0;
-        changePlayer();
-
-    }else{
-        addition = current + result;
-        total += addition + current;
-            if(gameStart){
-                current1.innerHTML = total
-            }else{
-                current2.innerHTML = total
-    }
-}
-
-}
-
-
- 
+/* change player / change background player/ add current to global score / set score to 0 */
 function changePlayer(){
+    
     if(gameStart) {
         gameStart = false
         player2.style.backgroundColor ="#a8e6cf";
@@ -93,20 +117,16 @@ function changePlayer(){
 
 }
 
+function winner(){
+    if(global1.innerHTML >= 100){
+alert(' Bravo  Player 1 !')
+  location.reload() 
+}
+  else if(global2.innerHTML >= 100){
+      alert(' Bravo  Player 2 !')
+      location.reload() 
+  }
+}
 
-newGame.addEventListener('click', ()=>{
 
-    location.reload() 
-})
-
-btn.addEventListener('click', ()=> {
-    rolling(1,7);
-    imgDice(result)
-    // const audio = new Audio('media/ONEDICE.WAV');
-    // audio.play();
-})
-
-btnhold.addEventListener('click', ()=>{
-  changePlayer();
-})
 
